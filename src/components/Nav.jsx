@@ -11,7 +11,7 @@ export default function Nav() {
         { name: 'Home', href: '/' },
         { name: 'Resume', href: '/resume' },
         { name: 'Work', href: '/work' },
-        { name: 'Services', href: '/services' },
+        { name: 'Services', href: '/s     ervices' },
         { name: 'Contact', href: '/contact' },
     ];
   return (
