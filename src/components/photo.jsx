@@ -19,10 +19,10 @@ export default function ProfileGlowInfinite() {
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image
-          src="/assets/me.jpg"
+          src="/assets/WhatsApp Image 2026-02-01 at 5.26.29 PM.jpeg"
           width={500}
           height={500}
-          alt="profile image glow"
+          alt="profile_img_glow"
           className="rounded-full w-[300px] xl:w-[500px]"
         />
       </motion.div>
