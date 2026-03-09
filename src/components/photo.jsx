@@ -19,7 +19,7 @@ export default function ProfileGlowInfinite() {
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image
-          src="/assets/WhatsApp Image 2026-02-01 at 5.26.29 PM.jpeg"
+          src="/assets/Gemini_Generated_Image_lbwvcclbwvcclbwv.png"
           width={500}
           height={500}
           alt="profile_img_glow"

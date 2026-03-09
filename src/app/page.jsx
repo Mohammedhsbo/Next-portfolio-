@@ -78,7 +78,7 @@ export default function Home() {
                   </a>
 
                   <a
-                    href="https://github.com/Mohammedhsbo?tab=repositories"
+                    href="https://github.com/Mohammedhsbo"
                     target="_blank"
                     className="w-10 h-10 flex items-center justify-center 
                rounded-full border border-green-400  text-green-400 
