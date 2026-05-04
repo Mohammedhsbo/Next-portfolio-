@@ -35,9 +35,16 @@ export default function Page() {
         "A movie app that allows users to search for movies by title and get detailed information.",
       tools: ["HTML", "JavaScript", "Bootstrap", "API"],
     },
+    {
+      num: "03",
+      title: "PharmancyERP",
+      image: "/assets/Screenshot 2026-05-04 025834.png",
+      description:"A pharmacy management system that helps pharmacies manage their inventory, sales, and customers in a simple and efficient way.",
+      tools:["React.js","Shadcn/ui","Electron","Node js","MongoDB","sQlite"]
+    },
    
     {
-      num:"03",
+      num:"04",
       tittle:"portfolio",
       image:"/assets/portfolio.png",
       description:"A portfolio website that showcases my skills and projects in a visually appealing and user-friendly way.",
@@ -45,7 +52,7 @@ export default function Page() {
 
     },
     {
-      num:"04",
+      num:"05",
       tittle:"AI Expense Tracker",
       image:"/assets/Screenshot 2026-03-09 220633.png",
       description:"An AI expense tracker that helps users track their expenses and budgets in a simple and easy-to-use way.",
