@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -9,6 +9,7 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import SectionHeader from "@/components/SectionHeader";
 import {
   SiCss3,
   SiHtml5,
@@ -23,7 +24,7 @@ import {
 } from "react-icons/si";
 
 export default function page() {
-  const skills = [
+  const skills = useMemo(() => [
     {
       tittle: "My Skills",
       description: "Technologies I have worked with",
@@ -46,8 +47,9 @@ export default function page() {
         { name: "Vercel", icon: <SiVercel size={80} color="#000000" /> },
       ],
     },
-  ];
-  const about = [
+  ], []);
+
+  const about = useMemo(() => [
     {
       title: "About me",
       description:
@@ -61,8 +63,9 @@ export default function page() {
         { fieldname: "expirence", filesvalue: "Junior" },
       ],
     },
-  ];
-  const expirence = [
+  ], []);
+
+  const expirence = useMemo(() => [
     {
       title: "My experience",
       description:
@@ -91,8 +94,9 @@ export default function page() {
         },
       ],
     },
-  ];
-  const education = [
+  ], []);
+
+  const education = useMemo(() => [
     {
       title: "My education",
       description: "CS Student in BFCAI",
@@ -105,7 +109,7 @@ export default function page() {
         },
       ],
     },
-  ];
+  ], []);
 
   return (
     <motion.section
@@ -114,9 +118,10 @@ export default function page() {
         opacity: 1,
         transition: { delay: 0.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="py-9 "
+      className="py-12 xl:py-20"
     >
-      <div className="px-5 xl:px-30 pt-14 xl:pt-5">
+      <div className="px-5 xl:px-30">
+        <SectionHeader title="Professional Profile" subtitle="A comprehensive overview of my skills, experience, and educational background." />
         <Tabs defaultValue="expirence" className="flex flex-col xl:flex-row  ">
           <TabsList className="flex flex-col  gap-8  mb-9  max-w-[380px] mx-auto xl:mx-0 ">
             <TabsTrigger
@@ -158,7 +163,7 @@ export default function page() {
     {about[0].info.map((info, index) => (
       <li
         key={index}
-        className="text-center xl:text-left bg-[#2323298e] p-5 rounded-lg gap-2 hover:cursor-pointer hover:bg-green-400/15 transition-all duration-300"
+        className="text-center xl:text-left bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-lg gap-2 hover:cursor-pointer hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(34,197,94,0.15)] transition-all duration-300"
       >
         <h4 className="text-2xl font-bold text-white">{info.fieldname}</h4>
 
@@ -206,7 +211,7 @@ export default function page() {
                     {skills[0].skilllists.map((skill, index) => (
                       <li
                         key={index}
-                        className=" relative group bg-[#2323298e] p-5 rounded-lg flex flex-col items-center gap-2 hover:cursor-pointer hover:bg-green-400/15 hover:transition-all hover:duration-300"
+                        className="relative group bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-lg flex flex-col items-center gap-2 hover:cursor-pointer hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(34,197,94,0.15)] transition-all duration-300"
                       >
                         <div className="relative group flex flex-col items-center">
                           {skill.icon}
@@ -242,7 +247,7 @@ export default function page() {
                     {expirence[0].jobs.map((job, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] p-5 rounded-lg flex flex-col gap-2"
+                        className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-lg flex flex-col gap-2 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(34,197,94,0.15)] transition-all duration-300"
                       >
                         <div className="flex flex-col gap-2">
                           <h4 className="text-2xl font-bold text-green-400 ">
@@ -270,7 +275,7 @@ export default function page() {
                   {education[0].educations.map((education, index) => (
                     <li
                       key={index}
-                      className="bg-[#232329] p-5 rounded-lg flex flex-col gap-2"
+                      className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-lg flex flex-col gap-2 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(34,197,94,0.15)] transition-all duration-300"
                     >
                       <div className="flex flex-col gap-2">
                         <h4 className="text-2xl font-bold text-green-400">

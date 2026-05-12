@@ -5,8 +5,15 @@
 
 @layer base {
   body {
-    @apply font-serif capitalize  bg-gray-950  text-white leading-loose ; /* Light background color */
+    @apply font-serif capitalize text-white leading-loose;
+    background: radial-gradient(circle at top, #111827 0%, #030712 100%);
+    background-attachment: fixed;
   }
+  
+  ::selection {
+    @apply bg-green-500/30 text-green-200;
+  }
+
   .active {
     @apply text-green-400 border-b-2 border-green-400;
   }
@@ -36,18 +43,18 @@
     text-stroke: 1px white; /* قياسي */
   }
   ::-webkit-scrollbar {
-  width: 12px; /* عرض الشريط */
+  width: 8px; /* عرض الشريط */
 }
 
 ::-webkit-scrollbar-track {
   background: transparent; /* خلفية المسار */
-  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #22c55e; /* لون المقبض */
-  border-radius: 6px;
-  border: 3px solid #1f2937; /* يعطي مساحة حول المقبض */
+  border-radius: 10px;
+  border: 2px solid transparent; 
+  background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {

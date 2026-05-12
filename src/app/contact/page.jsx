@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function Page() {
   const [name, setName] = useState("");
@@ -24,27 +24,40 @@ export default function Page() {
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handlesubmit = async (e) => {
+  const handlesubmit = useCallback(async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, lastname, email, phone, service, message }),
+      });
 
-  
-    toast.success("Message sent successfully!", {
-      duration: 4000,
-      position: "top-center",
-    });
-
-    
-    setName("");
-    setLastname("");
-    setEmail("");
-    setMessage("");
-    setPhone("");
-    setService("");
-  };
+      if (response.ok) {
+        toast.success("Message sent successfully!", {
+          duration: 4000,
+          position: "top-center",
+        });
+        setName("");
+        setLastname("");
+        setEmail("");
+        setMessage("");
+        setPhone("");
+        setService("");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      toast.error("An error occurred while sending the message.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [name, lastname, email, phone, service, message]);
 
   const info = [
     { icon: <FaPhoneAlt />, name: "Phone", text: "+20 101 462 5009" },
@@ -56,15 +69,15 @@ export default function Page() {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeIn" } }}
-      className="py-9"
+      className="py-12 xl:py-20"
     >
       <Toaster />
+      <div className="container mx-auto px-6 mb-10">
+        <SectionHeader title="Let's Work Together" subtitle="Contact me if you have any questions or want to collaborate." />
+      </div>
       <div className="flex flex-col xl:flex-row gap-9 xl:gap-20 justify-around items-center h-full px-8 xl:px-20">
         <div className="xl:h-[54%] order-2 xl:order-0 xl:w-[900px]">
-          <form onSubmit={handlesubmit} className="flex flex-col gap-6 p-10 bg-[#27272ca3] rounded-xl">
-            <h3 className="text-4xl font-semibold text-green-400 tracking-wide">let's work together</h3>
-            <p className="text-white/60 w-[75%]">Contact me if you have any questions or want to work together</p>
-
+          <form onSubmit={handlesubmit} className="flex flex-col gap-6 p-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center">
               <Input required placeholder="Firstname" value={name} onChange={(e) => setName(e.target.value)} />
               <Input placeholder="Lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />

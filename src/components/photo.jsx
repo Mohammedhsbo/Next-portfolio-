@@ -7,10 +7,11 @@
 //             />
 
 "use client";
+import React, { memo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function ProfileGlowInfinite() {
+const ProfileGlowInfinite = memo(function ProfileGlowInfinite() {
   return (
     <div className="flex justify-center items-center">
       <motion.div
@@ -22,11 +23,14 @@ export default function ProfileGlowInfinite() {
           src="/assets/Gemini_Generated_Image_lbwvcclbwvcclbwv.png"
           width={500}
           height={500}
+          priority
           alt="profile_img_glow"
           className="rounded-full w-[300px] xl:w-[500px]"
         />
       </motion.div>
     </div>
   );
-}
+});
+
+export default ProfileGlowInfinite;
 
