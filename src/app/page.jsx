@@ -46,7 +46,7 @@ export default function Home() {
 
               <div className="flex flex-col xl:flex-row gap-8  items-center">
                 <Link
-                  href="https://drive.google.com/drive/folders/1_rT2cC2C8Bd71bapjcS2wuwSyqEdWJKj"
+                  href="https://drive.google.com/file/d/1OwfILsFYBEMTrIo0_LOZc3VJUJqOjL1Q/view?usp=drive_link"
                   className="flex gap-2 items-center justify-center xl:justify-start hover:text-green-400 hover:transition-all hover:duration-300"
                 >
                   <button className="flex  items-center gap-3 px-6 py-3 transition-all duration-300 border border-green-400  text-green-400 rounded-full hover:bg-green-400/10 hover:text-white hover:cursor-pointer">
