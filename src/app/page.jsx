@@ -12,6 +12,7 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaInstagram,
+  FaWhatsapp,
 } from "react-icons/fa";
 import Photo from "../components/photo.jsx";
 import { FiDownload } from "react-icons/fi";
@@ -89,14 +90,14 @@ export default function Home() {
                   </a>
 
                   <a
-                    href="https://www.instagram.com/mohammedhsbo/"
+                    href="https://wa.me/+201014625009"
                     target="_blank"
                     className="w-10 h-10 flex items-center justify-center 
                rounded-full border border-green-400 text-green-400 
                hover:bg-green-400 hover:text-black hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] hover:-translate-y-1 hover:cursor-pointer
                transition-all duration-300"
                   >
-                    <FaInstagram size={18} />
+                    <FaWhatsapp size={18} />
                   </a>
                 </div>
               </div>

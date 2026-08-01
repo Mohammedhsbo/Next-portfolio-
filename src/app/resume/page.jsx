@@ -37,6 +37,7 @@ export default function page() {
         },
         { name: "React", icon: <SiReact size={80} color="#61DAFB" /> },
         { name: "Next.js", icon: <SiNextdotjs size={80} color="#000000" /> },
+
         {
           name: "Tailwind CSS",
           icon: <SiTailwindcss size={80} color="#38B2AC" />,
@@ -53,7 +54,7 @@ export default function page() {
     {
       title: "About me",
       description:
-        "I am a passionate Frontend Developer with a knack for creating engaging and user-friendly web applications. With a strong foundation in HTML, CSS, and JavaScript, I specialize in building responsive designs using React and Next.js. My goal is to deliver seamless user experiences while continuously learning and adapting to the latest industry trends.",
+        "Frontend Developer with hands-on experience building responsive, high-performance web applications using the MERN Stack (MongoDB, Express.js, React.js, Node.js) and Next.js. Proficient in RESTful API integration, component-driven UI development, state management, and Agile/Scrum collaboration. Pursuing a B.Sc. in Computer Science at Banha University",
       info: [
         { fieldname: "Name", filesvalue: "Muahmed Ahmed Hssbo" },
         { fieldname: "Email", filesvalue: "Mohaamedhassabo26@gmail.com" },
@@ -151,51 +152,51 @@ export default function page() {
           </TabsList>
           <>
             <TabsContent className="min-h-[70vh] w-full  " value="about">
-                <div className="flex flex-col text-center gap-[25px] xl:text-left">
-                   <h3 className="text-4xl font-bold  text-green-400/90">
+              <div className="flex flex-col text-center gap-[25px] xl:text-left">
+                <h3 className="text-4xl font-bold  text-green-400/90">
                   {about[0].title}
                 </h3>
                 <p className="max-w-[600px] mx-auto xl:mx-0 text-white/60">
                   {about[0].description}
                 </p>
                 <ScrollArea className="h-[400px]">
-  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-5 h-[600px]">
-    {about[0].info.map((info, index) => (
-      <li
-        key={index}
-        className="text-center xl:text-left bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-lg gap-2 hover:cursor-pointer hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(34,197,94,0.15)] transition-all duration-300"
-      >
-        <h4 className="text-2xl font-bold text-white">{info.fieldname}</h4>
+                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-5 h-[600px]">
+                    {about[0].info.map((info, index) => (
+                      <li
+                        key={index}
+                        className="text-center xl:text-left bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-lg gap-2 hover:cursor-pointer hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(34,197,94,0.15)] transition-all duration-300"
+                      >
+                        <h4 className="text-2xl font-bold text-white">{info.fieldname}</h4>
 
-        {info.fieldname === "Phone" ? (
-          <a
-            href="https://wa.me/201014625009"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-green-400 text-[18px] hover:underline mt-2 block"
-          >
-            {info.filesvalue}
-          </a>
-        ) : info.fieldname === "Email" ? (
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=Mohaamedhassabo26@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-green-400 text-[18px] hover:underline mt-2 block"
-          >
-            {info.filesvalue}
-          </a>
-        ) : (
-          <span className="font-semibold text-green-400 text-[18px] block">
-            {info.filesvalue}
-          </span>
-        )}
-      </li>
-    ))}
-  </ul>
-                 </ScrollArea>
+                        {info.fieldname === "Phone" ? (
+                          <a
+                            href="https://wa.me/201014625009"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-green-400 text-[18px] hover:underline mt-2 block"
+                          >
+                            {info.filesvalue}
+                          </a>
+                        ) : info.fieldname === "Email" ? (
+                          <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=Mohaamedhassabo26@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-green-400 text-[18px] hover:underline mt-2 block"
+                          >
+                            {info.filesvalue}
+                          </a>
+                        ) : (
+                          <span className="font-semibold text-green-400 text-[18px] block">
+                            {info.filesvalue}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
 
-                </div>
+              </div>
             </TabsContent>
             <TabsContent className="min-h-[70vh] w-full" value="skills">
               <div className="flex flex-col text-center gap-[25px] xl:text-left">
@@ -265,13 +266,13 @@ export default function page() {
             </TabsContent>
             <TabsContent className="min-h-[70vh] w-full" value="education">
               <div className="flex flex-col text-center gap-[25px] xl:text-left">
-                  <h3 className="text-4xl font-bold  text-green-400/90">
+                <h3 className="text-4xl font-bold  text-green-400/90">
                   {education[0].title}
                 </h3>
                 <p className="max-w-[600px] mx-auto xl:mx-0 text-white/60">
                   {education[0].description}
                 </p>
-                 <ScrollArea>
+                <ScrollArea>
                   {education[0].educations.map((education, index) => (
                     <li
                       key={index}
@@ -289,8 +290,8 @@ export default function page() {
                       </div>
                     </li>
                   ))}
-                 </ScrollArea>
-             </div>
+                </ScrollArea>
+              </div>
             </TabsContent>
           </>
         </Tabs>
